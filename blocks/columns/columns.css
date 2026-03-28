@@ -1,13 +1,12 @@
+/* columns block - IKEA style */
 .columns > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns img {
-  width: 100%;
+  gap: 24px;
 }
 
 .columns > div > div {
+  flex: 1;
   order: 1;
 }
 
@@ -15,15 +14,40 @@
   order: 0;
 }
 
-.columns > div > .columns-img-col img {
+.columns img {
+  width: 100%;
+  height: auto;
   display: block;
+  border-radius: 0.5rem;
+}
+
+.columns .columns-img-col img {
+  display: block;
+}
+
+.columns > div > div p {
+  margin: 8px 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+  color: var(--dark-color);
+}
+
+.columns > div > div p strong {
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+}
+
+.columns > div > div p a {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
 }
 
 @media (width >= 900px) {
   .columns > div {
+    flex-direction: row;
+    gap: 32px;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
   }
 
   .columns > div > div {

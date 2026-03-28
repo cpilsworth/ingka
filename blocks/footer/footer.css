@@ -1,20 +1,63 @@
+/* footer block - IKEA style */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
+  color: #fff;
+  font-size: var(--body-font-size-s);
 }
 
-footer .footer > div {
+footer .footer {
+  max-width: 90rem;
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 40px 24px;
 }
 
-footer .footer p {
+footer a:any-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer h2,
+footer h3,
+footer h4 {
+  color: #fff;
+  font-size: var(--body-font-size-m);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
+footer ul li {
+  padding: 4px 0;
+}
+
+footer p {
+  margin: 8px 0;
+  line-height: 1.6;
+  color: #929292;
+}
+
 @media (width >= 900px) {
+  footer .footer {
+    padding: 48px 32px;
+  }
+
   footer .footer > div {
-    padding: 40px 32px 24px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  footer .footer > div > div {
+    flex: 1;
+    min-width: 200px;
   }
 }

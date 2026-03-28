@@ -1,27 +1,93 @@
-.cards > ul {
+/* cards block - IKEA style */
+.cards ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
 }
 
-.cards > ul > li {
-  border: 1px solid var(--light-color);
+.cards ul > li {
   background-color: var(--background-color);
-}
-
-.cards .cards-card-body {
-  margin: 16px;
+  border-radius: 0.5rem;
+  overflow: hidden;
 }
 
 .cards .cards-card-image {
+  aspect-ratio: 1;
+  overflow: hidden;
   line-height: 0;
 }
 
-.cards > ul > li img {
+.cards .cards-card-image picture {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
+}
+
+.cards .cards-card-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cards ul > li:hover .cards-card-image img {
+  transform: scale(1.03);
+}
+
+.cards .cards-card-body {
+  padding: 12px 4px;
+}
+
+.cards .cards-card-body h3 {
+  margin: 0 0 4px;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cards .cards-card-body h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.cards .cards-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
+.cards .cards-card-body p {
+  margin: 4px 0;
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+  line-height: 1.5;
+}
+
+.cards .cards-card-body p a {
+  color: var(--link-color);
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+}
+
+.cards .cards-card-body p a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cards .cards-card-body {
+    padding: 12px 0;
+  }
 }
